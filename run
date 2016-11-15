@@ -1,0 +1,12 @@
+#!/bin/bash
+
+bundle
+rm *.out
+
+for i in `seq 2 3`; do
+  for j in `seq 2 8`; do
+    LENGTH=$i DIMENSION=$j bundle exec rake run > length=$i-dimension=$j.out &
+  done
+done
+
+tail -f *.out
