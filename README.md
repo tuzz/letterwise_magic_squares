@@ -23,3 +23,39 @@ Much of these code is borrowed from
 [this repository](https://github.com/tuzz/number_chains) where I tackled another
 of standupmaths' problems. Some of the code is tested there, but this is mostly
 just cobbled together in an hour or so.
+
+##Solutions
+
+**Chain length 2, Dimension 3:**
+
+```
+(sum: 45)
+18, 22, 5
+2, 15, 28
+25, 8, 12
+```
+
+```
+(sum: 21)
+8, 9, 4
+3, 7, 11
+10, 5, 6
+```
+
+**Chain length 2, Dimension 4:**
+
+```
+(sum: 258)
+18, 127, 105, 8
+125, 1, 24, 108
+4, 115, 118, 21
+111, 15, 11, 121
+```
+
+```
+(sum: 54)
+8, 24, 17, 5
+23, 3, 10, 18
+4, 20, 21, 9
+19, 7, 6, 22
+```
