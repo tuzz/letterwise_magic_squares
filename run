@@ -9,4 +9,6 @@ for i in `seq 2 3`; do
   done
 done
 
+sleep 3
+
 tail -f *.out
