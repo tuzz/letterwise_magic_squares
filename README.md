@@ -15,11 +15,11 @@ length.
 
 Some Ruby is used for the dynamic generation of Sentient programs and there's
 some bash to coordinate the whole thing. If you have a fairly recent version of
-Ruby installed, you can run the program with `./run`. The starts a number of
+Ruby installed, you can run the program with `./run`. This starts a number of
 processes to search in parallel. You can kill these processes with
 `killall ruby`.
 
-Much of these code is borrowed from
+Much of this code is borrowed from
 [this repository](https://github.com/tuzz/number_chains) where I tackled another
 of standupmaths' problems. Some of the code is tested there, but this is mostly
 just cobbled together in an hour or so.
