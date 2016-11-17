@@ -23,6 +23,10 @@ Much of this code is borrowed from
 of standupmaths' problems. Some of this code is tested, but it's mostly just
 cobbled together in an hour or so.
 
+All of the magic squares listed here use this convention:
+
+> one hundred _and_ twenty seven
+
 ##Solutions
 
 Here's the solution presented in the standupmaths video:
@@ -48,14 +52,20 @@ Here's a 3x3 solution that is **doubly letterwise**, meaning you can perform the
 letterwise operation twice and both resulting squares are magic!
 
 ```
-(sum: 434862830382)                           (sum: 354)         (sum: 60)
+(sum: 434120486631)                           (sum: 345)         (sum: 60)
+144373773878, 178039883876, 111706828877      125, 108, 112      23, 18, 19
+112039883876, 144706828877, 177373773878  =>  102, 115, 128  =>  16, 20, 24
+177706828877, 111373773878, 145039883876      118, 122, 105      21, 22, 17
+```
+
+Here are two more:
+
+```
+(sum: 434862830382)                           (sum: 345)         (sum: 60)
 111954276794, 177773873377, 145134680211      112, 128, 105      19, 24, 17
 178134680211, 144954276794, 111773873377  =>  108, 115, 122  =>  18, 20, 22
 144773873377, 112134680211, 177954276794      125, 102, 118      23, 16, 21
 ```
-
-Here's another. I'm yet to confirm what the smallest sum is for a 3x3 doubly
-letterwise magic square.
 
 ```
 (sum: 1107565022502)                          (sum: 345)         (sum: 60)
@@ -63,3 +73,9 @@ letterwise magic square.
 324773878877, 369188340834, 413602802791  =>  128, 115, 102  =>  24, 20, 16
 471142840335, 209693803789, 426728378378      112, 108, 125      19, 18, 23
 ```
+
+I'd like to find the smallest summation version of the above.
+
+I have also compiled a list of all 3x3 letterwise solutions up to 1000. It is
+available [here](./solutions_upto_1000.md). There are 102 distinct solutions in
+total.
