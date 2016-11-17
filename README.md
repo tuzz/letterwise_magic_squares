@@ -77,5 +77,5 @@ Here are two more:
 I'd like to find the smallest summation version of the above.
 
 I have also compiled a list of all 3x3 letterwise solutions up to 1000. It is
-available [here](./solutions_upto_1000.md). There are 102 distinct solutions in
+available [here](./solutions_up_to_1000.md). There are 102 distinct solutions in
 total.
