@@ -38,7 +38,7 @@ Here's the solution presented in the standupmaths video:
 25, 8, 12      10, 5, 6
 ```
 
-Here's a 4x4 solution:
+Here's the smallest possible 4x4 solution:
 
 ```
 (sum: 258)            (sum: 54)
@@ -48,34 +48,20 @@ Here's a 4x4 solution:
 111, 15, 11, 121      19, 7, 6, 22
 ```
 
-Here's a 3x3 solution that is **doubly letterwise**, meaning you can perform the
-letterwise operation twice and both resulting squares are magic!
+Here's the smallest possible 3x3 solution that is doubly letterwise. This means
+you can perform the letterwise operation twice and both resulting squares are
+magic!
 
 ```
-(sum: 434120486631)                           (sum: 345)         (sum: 60)
-144373773878, 178039883876, 111706828877      125, 108, 112      23, 18, 19
-112039883876, 144706828877, 177373773878  =>  102, 115, 128  =>  16, 20, 24
-177706828877, 111373773878, 145039883876      118, 122, 105      21, 22, 17
+(sum: 303370120164)                          (sum: 345)         (sum: 60)
+148728378378, 28372868903, 126268872883      125, 102, 118      23, 16, 21
+78663867893, 101123373388, 123582878883  =>  108, 115, 122  =>  18, 20, 22
+75977873893, 173873877873, 53518368398       112, 128, 105      19, 24, 17
 ```
 
-Here are two more:
+There are more 3x3 doubly letterwise solutions [here](./doubly_letterwise.md).
+It took about 3 days of compute time on my laptop for Sentient to find the
+minimum solution.
 
-```
-(sum: 434862830382)                           (sum: 345)         (sum: 60)
-111954276794, 177773873377, 145134680211      112, 128, 105      19, 24, 17
-178134680211, 144954276794, 111773873377  =>  108, 115, 122  =>  18, 20, 22
-144773873377, 112134680211, 177954276794      125, 102, 118      23, 16, 21
-```
-
-```
-(sum: 1107565022502)                          (sum: 345)         (sum: 60)
-311648303290, 528682877879, 267233841333      105, 122, 118      17, 22, 21
-324773878877, 369188340834, 413602802791  =>  128, 115, 102  =>  24, 20, 16
-471142840335, 209693803789, 426728378378      112, 108, 125      19, 18, 23
-```
-
-I'd like to find the smallest summation version of the above.
-
-I have also compiled a list of all 3x3 letterwise solutions up to 1000. It is
-available [here](./solutions_up_to_1000.md). There are 102 distinct solutions in
-total.
+There is a list of all 3x3 letterwise solutions up to 1000
+[here](solutions_up_to_1000.md). There are 102 distinct solutions.
