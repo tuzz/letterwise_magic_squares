@@ -1,9 +1,13 @@
-##Doubly letterwise solutions
+## Double alphamagic solutions
 
-This page contains 50 distinct doubly letterwise solutions. There solutions were
-during the process of converging on the minimum solution (listed in the readme).
+This page contains 50 distinct double alphamagic solutions. These solutions were
+found during the process of converging on the minimum solution (listed in the
+[readme](https://github.com/tuzz/letterwise_magic_squares/blob/master/README.md)).
 All these solutions end in 345 => 60, but there are likely solutions for other
 sums, too.
+
+If the 'and' is omitted from English names, there are no double letterwise
+solutions up to 2^40 (one trillion) but could be beyond this.
 
 **Solution 1:**
 ```

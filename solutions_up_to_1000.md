@@ -1,8 +1,8 @@
-##Solutions up to 1000
+## Solutions up to 1000
 
-There are 102 distinct 3x3 letterwise magic squares up to 1000. They are listed
+There are 102 distinct 3x3 alphamagic magic squares up to 1000. They are listed
 on this page. Of these, there are 23 summations that have more than one
-letterwise magic square that forms them. Here is a table of these cases:
+alphamagic square that forms them. Here is a table of these cases:
 
 |         | Summations |
 |---------|:----------:|

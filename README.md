@@ -1,8 +1,8 @@
-##Letterwise Magic Squares
+## Alphamagic Squares
 
-A quick attempt to find letterwise magic squares.
+**Update:** An article was published about this [here](https://www.futilitycloset.com/2017/05/07/double-alphamagic-squares/).
 
-Letterwise magic squares are magic squares such that the count of letters of the
+Alphamagic magic squares are magic squares such that the count of letters of the
 English words for the numbers in the square also form a magic square. This is
 better explained in [this](https://www.youtube.com/watch?v=cZ1W1vbuYuQ)
 standupmaths video.
@@ -10,7 +10,7 @@ standupmaths video.
 This attempt uses [Sentient](http://sentient-lang.org/) which is a programming
 language I've been writing for solving combinatorial problems. The program is
 generalised and will work for squares of different dimensions. Additionally, it
-is generalised to search for chains of letterwise magic squares of arbitrary
+is generalised to search for chains of alphamagic magic squares of arbitrary
 length.
 
 Some Ruby is used for the dynamic generation of Sentient programs and there's
@@ -27,7 +27,7 @@ All of the magic squares listed here use this convention:
 
 > one hundred _and_ twenty seven
 
-##Solutions
+## Solutions
 
 Here's the solution presented in the standupmaths video:
 
@@ -48,8 +48,8 @@ Here's the smallest possible 4x4 solution:
 111, 15, 11, 121      19, 7, 6, 22
 ```
 
-Here's the smallest possible 3x3 solution that is doubly letterwise. This means
-you can perform the letterwise operation twice and both resulting squares are
+Here's the smallest possible 3x3 solution that is doubly alphamagic. This means
+you can perform the counting operation twice and both resulting squares are
 magic!
 
 ```
@@ -59,9 +59,9 @@ magic!
 75977873893, 173873877873, 53518368398       112, 128, 105      19, 24, 17
 ```
 
-There are more 3x3 doubly letterwise solutions [here](./doubly_letterwise.md).
+There are more 3x3 doubly alphamagic solutions [here](./doubly_letterwise.md).
 It took about 3 days of compute time on my laptop for Sentient to find the
 minimum solution.
 
-There is a list of all 3x3 letterwise solutions up to 1000
+There is a list of all 3x3 alphamagic solutions up to 1000
 [here](solutions_up_to_1000.md). There are 102 distinct solutions.
