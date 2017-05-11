@@ -85,38 +85,33 @@ module LetterwiseMagicSquares
 
       def lookup_table
         <<-SNT
-          # The number of letters in one..nine
+          # The number of letters in 1..19
           # 0 is prepended for convenience
-          one_lookup = [0, 3, 3, 5, 4, 4, 3, 5, 5, 4];
+          one_lookup = [0, 2, 4, 5, 6, 4, 3, 4, 4, 4, 3, 4, 5, 6, 8, 6, 5, 7, 7, 7];
 
-          # The number of letters in ten..ninety
-          ten_lookup = [0, 3, 6, 6, 5, 5, 5, 7, 6, 6];
+          ten_lookup = [0, 0, 5, 6, 8, 9, 8, 8, 11, 11];
 
-          # The delta of (eleven..nineteen) - ten - (one..nine)
-          teen_lookup = [0, 0, 0, 0, 1, 0, 1, 1, 0, 1];
+          teens = [1, 7, 9];
 
-          function^ numberOfLettersUpto1000 (n) {
+          function^ numberOfLettersUpto1000 (n, isMille) {
             sum = 0;
 
-            hundreds, modulo_100 = n.divmod(100);
-            tens, remainder = modulo_100.divmod(10);
+            hundreds, remainder = n.divmod(100);
+            tens, ones = remainder.divmod(10);
+            ones += teens.include?(tens) ? 10 : 0;
 
-            # Add the characters from the ones
-            sum += one_lookup[remainder];
-
-            # Add the characters from the tens
             sum += ten_lookup[tens];
+            sum += one_lookup[ones];
+            sum += ones == 1 && tens > 0 ? 2 : 0;
+            sum += tens == 8 && ones == 0 ? 1 : 0;
 
-            # Add the teen delta if 11 <= modulo_100 <= 19
-            sum += modulo_100.between?(11, 19) ? teen_lookup[remainder] : 0;
+            # Add 'cent(s)'
+            sum += hundreds > 0 ? 4 : 0;
+            sum += hundreds > 1 && tens == 0 && ones == 0 ? 1 : 0;
+            sum += hundreds > 1 ? one_lookup[hundreds]: 0;
 
-            # Add the characters from the hundreds
-            sum += one_lookup[hundreds];
-            sum += hundreds.zero? ? 0 : 7;
-
-            # Add the word 'and'
-            and_required = hundreds != 0 && modulo_100 != 0;
-            sum += and_required ? 3 : 0;
+            # Remove 'un' infront of 'mille'
+            sum -= isMille && n == 1 ? 2 : 0;
 
             return sum;
           };
@@ -141,11 +136,15 @@ module LetterwiseMagicSquares
           terms += "\n#{word}s, remainder = remainder.divmod(1#{"0" * digits});"
         end
 
-        terms += "\ntotal += numberOfLettersUpto1000(remainder);"
+        terms += "\ntotal += numberOfLettersUpto1000(remainder, false);"
 
+        mille = true
         exponentials.each do |(digits, word)|
-          terms += "\ntotal += numberOfLettersUpto1000(#{word}s);"
+          terms += "\ntotal += numberOfLettersUpto1000(#{word}s, #{mille});"
           terms += "\ntotal += #{word}s.zero? ? 0 : #{word.length};"
+          terms += "\ntotal += #{word}s > 1 ? 1 : 0;" unless mille
+
+          mille = false
         end
 
         terms
@@ -156,8 +155,8 @@ module LetterwiseMagicSquares
         exponentials = (digits - 1) / 3
 
         1.upto(exponentials).map do |exp|
-          word = (1000 ** exp).to_words
-          word = word[4..-1].gsub(/[^a-z]/, "")
+          word = I18n.with_locale(:fr) { (1000 ** exp).to_words }
+          word = word.gsub("un ", "").gsub(/[^a-z]/, "")
 
           [exp * 3, word]
         end
